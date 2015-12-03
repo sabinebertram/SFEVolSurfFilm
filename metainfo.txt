@@ -18,6 +18,6 @@ Input:        		'Price of the option, skrike price, risk-free interest rate,
               		time to maturity, price of the underlying, Put-Call-flag
               		and index for different trading dates'
 
-Output:       		Film of implied volatility surface.
+Output:       		Film of implied volatility surface
 
 
