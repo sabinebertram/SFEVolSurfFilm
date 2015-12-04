@@ -96,16 +96,9 @@ for s=1:t
             % optimal bandwidth rule of thumb for quartic kernel
             h1=2.78*std(A(:,8))*v^(-1/6);
         
-            c=NaN(v,1);
-            c(1)=A(1,4);
-            d=1;
-            for l=2:v
-                if A(l,4)~=A(l-1,4)
-                    c(l)=A(l,4);
-                    d=d+1;
-                end
-            end
-            h2=2.78*std(c,'omitnan')*d^(-1/6);
+            c=unique(A(:,4));
+            d=length(c);
+            h2=2.78*std(c)*d^(-1/6);
         
             % kernel matrix - quartic kernel
             W=zeros(v,v);
