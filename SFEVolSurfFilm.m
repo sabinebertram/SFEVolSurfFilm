@@ -94,7 +94,9 @@ for s=1:t
             Y=A(:,9);
         
             % optimal bandwidth rule of thumb for quartic kernel
-            h1=2.78*std(A(:,8))*v^(-1/6);
+            a=unique(A(:,8));
+            b=length(a);
+            h1=2.78*std(a)*b^(-1/6);
         
             c=unique(A(:,4));
             d=length(c);
@@ -169,5 +171,5 @@ end
 %movie(gcf,M,1,2)
 
 % save film
-movie2avi(M, 'VolSurfFilm','fps',1)
+movie2avi(M, 'VolSurfFilm.avi','fps',1)
 
